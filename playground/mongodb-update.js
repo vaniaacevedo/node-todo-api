@@ -16,13 +16,13 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
   //     console.log(result)
   //   });
 
- db. collection('Users').findOneAndUpdate(
+ db.collection('Users').findOneAndUpdate(
    { _id: new ObjectID('5abd11f9a5793941566bfb6c') },
    { $set: {name:'Maja'}, $inc: {age:1} },
    { returnOriginal:false}).then ((result) => {
      console.log(result);
    });
 
-  // client.close();
+  client.close();
 
 });
